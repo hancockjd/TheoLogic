@@ -19,8 +19,15 @@ python3 -m http.server 8000
 # then visit http://localhost:8000
 ```
 
-A server is preferable to opening the file directly — `file://` origins treat
-every asset as cross-origin, which can block the stylesheet and script.
+Double-clicking `index.html` also works: in Chrome over `file://`, the
+stylesheet, script, all images, and both fonts load (other browsers were not
+tested). A local server is still the better habit, because it serves the site
+over HTTP the way GitHub Pages does.
+
+To mirror the live project URL exactly, serve the **parent** folder and open
+`http://localhost:8000/TheoLogic/`. That makes the `/TheoLogic/` paths in
+`404.html` resolve. Python's server shows its own error page for a missing URL
+rather than `404.html`, so open `/TheoLogic/404.html` directly to preview it.
 
 ## Layout
 
