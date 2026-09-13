@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors / local tooling — never deploy
+.vscode/
+.idea/
+.claude/
+*.swp
+*~
+
+# Logs / local scratch
+*.log
+.cache/
+tmp/

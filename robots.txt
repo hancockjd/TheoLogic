@@ -1,2 +1,19 @@
+# Theo Logic, LLC
+#
+# STATUS: unlisted. This site is deliberately excluded from search engines while
+# it is in client review. index.html also carries <meta name="robots"
+# content="noindex, nofollow">; both must be changed to go live.
+#
+# AT LAUNCH, replace everything below with:
+#
+#   User-agent: *
+#   Allow: /
+#   Disallow: /archive/
+#   Sitemap: https://<real-domain>/sitemap.xml
+#
+# A GitHub Pages site on a public repo is reachable by anyone holding the URL.
+# Disallow is a request to crawlers, not access control — treat these links as
+# unlisted, not private.
+
 User-agent: *
 Disallow: /

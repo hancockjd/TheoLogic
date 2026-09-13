@@ -3,588 +3,691 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Theo Logic, LLC — Guided by Truth. Driven by Logic.</title>
+<meta name="description" content="Theo Logic, LLC creates film, music, and media entertainment that informs, inspires, and encourages positive societal change.">
+<meta name="author" content="Theo Logic, LLC">
+<meta name="theme-color" content="#07080A">
+<meta name="color-scheme" content="dark">
+
+<!-- ============================================================
+     LAUNCH SWITCH — this page is currently UNLISTED
+     ------------------------------------------------------------
+     The robots meta below and the disallow-all /robots.txt keep this site out of
+     search results. To go live:
+       1. Delete the robots meta tag directly below.
+       2. Replace /robots.txt with an allow rule + sitemap reference.
+       3. Replace every https://www.theologic.com with the real domain
+          (canonical, og:url, og:image, twitter:image, JSON-LD, and the Sitemap
+          line in robots.txt). That domain is a PLACEHOLDER, not confirmed.
+       4. Add /sitemap.xml.
+     Full list in README.md → "Pre-launch checklist".
+     ============================================================ -->
 <meta name="robots" content="noindex, nofollow">
-<title>Theo Logic Design Review</title>
-<meta name="description" content="Private review of two website directions for Theo Logic, LLC.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 
-<style>
-/* ============================================================
-   THEO LOGIC — Design Review board
-   The page is neutral ground on purpose. Direction A is dark and
-   cinematic; Direction B is warm and editorial. If this page took
-   either side visually it would put a thumb on the scale. So it is
-   a cool architectural grey — a gallery wall — and the only real
-   color on it belongs to the two specimens mounted on it.
-   ============================================================ */
+<link rel="canonical" href="https://www.theologic.com/">
 
-:root{
-  /* light — cool grey with a slight blue bias, not a warm cream */
-  --ground:   #E7EBED;
-  --ground-2: #DDE2E5;
-  --card:     #FBFCFD;
-  --ink:      #161A1E;
-  --ink-2:    #3F4952;
-  --muted:    #6B7883;
-  --line:     rgba(22,26,30,.13);
-  --line-2:   rgba(22,26,30,.26);
-  --accent:   #2E5D7C;
-  --accent-2: #1F4761;
-  --flag:     #8A4A2E;
-  --shadow:   0 1px 2px rgba(22,26,30,.05), 0 12px 32px -12px rgba(22,26,30,.18);
+<!-- Open Graph / social cards. og:image must be an absolute URL to resolve. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Theo Logic, LLC">
+<meta property="og:title" content="Theo Logic, LLC — Guided by Truth. Driven by Logic.">
+<meta property="og:description" content="Film, music, and media entertainment that informs, inspires, and encourages positive societal change.">
+<meta property="og:url" content="https://www.theologic.com/">
+<meta property="og:image" content="https://www.theologic.com/assets/img/work/kindness-project-first-light.jpg">
+<meta property="og:image:alt" content="First light breaking on a cold horizon">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Theo Logic, LLC — Guided by Truth. Driven by Logic.">
+<meta name="twitter:description" content="Film, music, and media entertainment that informs, inspires, and encourages positive societal change.">
+<meta name="twitter:image" content="https://www.theologic.com/assets/img/work/kindness-project-first-light.jpg">
 
-  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --body:    "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --mono:    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
 
-  --maxw: 1180px;
-  --pad: clamp(20px, 5vw, 64px);
+<link rel="stylesheet" href="assets/css/styles.css">
+<script src="assets/js/main.js" defer></script>
+
+<!-- Without JS, .reveal elements would stay at opacity:0 (blank page) and the
+     marquee track would render empty. Restore a readable static page instead. -->
+<noscript>
+  <style>
+    .reveal{opacity:1 !important; transform:none !important}
+    .marquee{display:none}
+    .progress{display:none}
+  </style>
+</noscript>
+
+<!-- Organization schema. Confirm details and add sameAs profiles before launch. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Theo Logic, LLC",
+  "legalName": "Theo Logic, LLC",
+  "url": "https://www.theologic.com/",
+  "logo": "https://www.theologic.com/assets/brand/favicon.svg",
+  "slogan": "Guided by Truth. Driven by Logic.",
+  "description": "Theo Logic, LLC creates film, music, and media entertainment that informs, inspires, and encourages positive societal change.",
+  "email": "hello@theologic.com",
+  "knowsAbout": ["Film production", "Music and score", "Media and digital", "Story and IP development"]
 }
-
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ground:   #131719;
-    --ground-2: #0E1214;
-    --card:     #1B2124;
-    --ink:      #E9EDEF;
-    --ink-2:    #B3BEC5;
-    --muted:    #808C95;
-    --line:     rgba(233,237,239,.14);
-    --line-2:   rgba(233,237,239,.28);
-    --accent:   #7FB6D6;
-    --accent-2: #A8CFE6;
-    --flag:     #D89272;
-    --shadow:   0 1px 2px rgba(0,0,0,.4), 0 14px 36px -14px rgba(0,0,0,.6);
-  }
-}
-:root[data-theme="dark"]{
-  --ground:   #131719;
-  --ground-2: #0E1214;
-  --card:     #1B2124;
-  --ink:      #E9EDEF;
-  --ink-2:    #B3BEC5;
-  --muted:    #808C95;
-  --line:     rgba(233,237,239,.14);
-  --line-2:   rgba(233,237,239,.28);
-  --accent:   #7FB6D6;
-  --accent-2: #A8CFE6;
-  --flag:     #D89272;
-  --shadow:   0 1px 2px rgba(0,0,0,.4), 0 14px 36px -14px rgba(0,0,0,.6);
-}
-
-*,*::before,*::after{ box-sizing:border-box }
-
-body{
-  margin:0;
-  background:var(--ground);
-  color:var(--ink);
-  font-family:var(--body);
-  font-size:16.5px;
-  line-height:1.62;
-  -webkit-font-smoothing:antialiased;
-}
-
-.wrap{ max-width:var(--maxw); margin:0 auto; padding-left:var(--pad); padding-right:var(--pad) }
-
-h1,h2,h3{ font-family:var(--display); font-weight:700; text-wrap:balance; margin:0 }
-h1{ font-variation-settings:"wdth" 108; font-size:clamp(30px,4.4vw,50px); line-height:1.06; letter-spacing:-.018em }
-h2{ font-variation-settings:"wdth" 104; font-size:clamp(21px,2.5vw,28px); line-height:1.16; letter-spacing:-.012em }
-h3{ font-variation-settings:"wdth" 102; font-size:18px; line-height:1.28; letter-spacing:-.006em }
-p{ margin:0 }
-em{ font-style:italic }
-
-.eyebrow{
-  font-family:var(--mono); font-size:11.5px; font-weight:500;
-  letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
-}
-
-/* ---------------- title block ---------------- */
-
-.board{
-  background:var(--ground-2);
-  border-bottom:1px solid var(--line);
-}
-.board .wrap{ padding-top:clamp(28px,5vw,44px); padding-bottom:clamp(30px,5vw,48px) }
-
-.meta{
-  display:grid; gap:18px 40px;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  padding-bottom:clamp(26px,4vw,38px);
-  border-bottom:1px solid var(--line);
-  margin-bottom:clamp(26px,4vw,38px);
-}
-.meta div{ display:flex; flex-direction:column; gap:5px }
-.meta .val{ font-family:var(--mono); font-size:13.5px; color:var(--ink-2) }
-.meta .val strong{ color:var(--ink); font-weight:600 }
-
-.lede{
-  margin-top:22px; max-width:60ch;
-  font-size:clamp(17px,1.7vw,19.5px); line-height:1.58; color:var(--ink-2);
-}
-.lede strong{ color:var(--ink); font-weight:600 }
-
-/* ---------------- generic section ---------------- */
-
-section{ padding-block:clamp(44px,6vw,76px) }
-section + section{ border-top:1px solid var(--line) }
-.head{ display:flex; flex-direction:column; gap:10px; margin-bottom:clamp(24px,3.2vw,36px); max-width:66ch }
-.head p{ color:var(--ink-2) }
-
-/* ---------------- notes before looking ---------------- */
-
-.notes{ display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden;
-        grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) }
-.note{ background:var(--card); padding:22px 24px; display:flex; flex-direction:column; gap:9px }
-.note h3{ font-size:15.5px }
-.note p{ font-size:14.5px; color:var(--ink-2); line-height:1.55 }
-
-/* ---------------- the two specimens ---------------- */
-
-.specimens{ display:grid; gap:clamp(20px,2.6vw,30px); grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); align-items:stretch }
-
-.spec{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:4px;
-  box-shadow:var(--shadow);
-  overflow:hidden;
-  display:flex; flex-direction:column;
-}
-
-/* the band is the specimen itself: each direction's real ground + accents */
-.band{ height:104px; position:relative; display:flex; align-items:flex-end; padding:0 }
-.band .swatches{ display:flex; width:100% }
-.band .sw{ flex:1; height:104px }
-.band .tag{
-  position:absolute; top:14px; left:16px;
-  font-family:var(--mono); font-size:11px; font-weight:600;
-  letter-spacing:.13em; text-transform:uppercase;
-  padding:5px 9px; border-radius:2px;
-}
-
-.spec-body{ padding:clamp(22px,2.4vw,30px); display:flex; flex-direction:column; gap:20px; flex:1 }
-.spec-title{ display:flex; flex-direction:column; gap:7px }
-.spec-title h2 .dir{ display:block; color:var(--muted); font-size:13px; font-family:var(--mono);
-                     font-weight:500; letter-spacing:.13em; text-transform:uppercase; margin-bottom:8px;
-                     font-variation-settings:normal }
-.thesis{ font-size:16.5px; color:var(--ink); line-height:1.5 }
-.thesis strong{ font-weight:600 }
-
-.attrs{ display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line) }
-.attr{ display:grid; grid-template-columns:112px 1fr; gap:16px; padding:11px 0; border-bottom:1px solid var(--line); align-items:baseline }
-.attr dt{ font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted) }
-.attr dd{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.5 }
-
-.risk{
-  border-left:2px solid var(--flag);
-  padding:2px 0 2px 14px;
-  font-size:14.5px; line-height:1.55; color:var(--ink-2);
-}
-.risk .lab{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:.13em;
-            text-transform:uppercase; color:var(--flag); margin-bottom:5px; font-weight:600 }
-
-.open{
-  margin-top:auto;
-  display:inline-flex; align-items:center; justify-content:space-between; gap:14px;
-  font-family:var(--display); font-variation-settings:"wdth" 100; font-weight:600; font-size:15.5px;
-  padding:15px 20px; border-radius:3px; text-decoration:none;
-  transition:transform .18s ease, filter .18s ease;
-}
-.open .arrow{ font-family:var(--mono); font-weight:400 }
-.open:hover{ transform:translateY(-1px); filter:brightness(1.08) }
-.open:focus-visible{ outline:2px solid var(--accent); outline-offset:3px }
-
-/* Direction A wears its own colors */
-.a .band{ background:#07080A }
-.a .tag{ background:#E7B54F; color:#07080A }
-.a .open{ background:#07080A; color:#E7B54F; border:1px solid #E7B54F }
-/* Direction B wears its own colors */
-.b .band{ background:#F7F2E8 }
-.b .tag{ background:#B5533A; color:#F7F2E8 }
-.b .open{ background:#B5533A; color:#F7F2E8; border:1px solid #B5533A }
-
-/* ---------------- comparison table ---------------- */
-
-.tablewrap{ overflow-x:auto; border:1px solid var(--line); border-radius:3px; background:var(--card) }
-table{ border-collapse:collapse; width:100%; min-width:640px; font-size:14.5px }
-th,td{ text-align:left; padding:13px 18px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.5 }
-thead th{
-  font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase;
-  color:var(--muted); font-weight:600; background:var(--ground-2); border-bottom:1px solid var(--line-2);
-  position:sticky; top:0;
-}
-tbody th{ font-weight:500; color:var(--muted); font-family:var(--mono); font-size:11.5px;
-          letter-spacing:.08em; text-transform:uppercase; width:150px }
-tbody td{ color:var(--ink-2) }
-tbody tr:last-child th, tbody tr:last-child td{ border-bottom:0 }
-
-/* ---------------- recommendation ---------------- */
-
-.rec{
-  background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
-  border-radius:3px; padding:clamp(24px,3vw,34px);
-  display:flex; flex-direction:column; gap:16px;
-}
-.rec p{ color:var(--ink-2); max-width:70ch }
-.rec p strong{ color:var(--ink); font-weight:600 }
-.rec h2{ color:var(--ink) }
-
-.third{ margin-top:6px; padding-top:18px; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:9px }
-.third p{ font-size:15px }
-
-/* ---------------- questions ---------------- */
-
-.qs{ display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden }
-.q{ background:var(--card); padding:20px 24px; display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:start }
-.q .n{ font-family:var(--mono); font-size:12px; color:var(--accent); font-weight:600; padding-top:4px; min-width:1.4em }
-.q .qt{ display:flex; flex-direction:column; gap:6px }
-.q h3{ font-size:16.5px }
-.q p{ font-size:14.5px; color:var(--muted); line-height:1.5 }
-
-/* ---------------- shared facts ---------------- */
-
-.shared{ display:grid; gap:14px 36px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); max-width:100% }
-.shared li{ list-style:none; padding-left:20px; position:relative; font-size:15px; color:var(--ink-2); line-height:1.55 }
-.shared li::before{ content:"—"; position:absolute; left:0; color:var(--muted); font-family:var(--mono) }
-ul.shared{ margin:0; padding:0 }
-
-/* ---------------- schedule ---------------- */
-
-.sched{ display:flex; flex-direction:column; border-top:1px solid var(--line) }
-.step{ display:grid; grid-template-columns:132px 1fr; gap:clamp(16px,3vw,36px);
-       padding:19px 0; border-bottom:1px solid var(--line); align-items:baseline }
-.step .when{ font-family:var(--mono); font-size:13px; color:var(--accent); font-weight:500; font-variant-numeric:tabular-nums }
-.step .what{ display:flex; flex-direction:column; gap:5px }
-.step h3{ font-size:16px }
-.step p{ font-size:14.5px; color:var(--muted); line-height:1.5 }
-.step.final .when{ color:var(--flag); font-weight:600 }
-.step.final h3{ color:var(--ink) }
-
-.caveat{ margin-top:22px; font-size:14px; color:var(--muted); max-width:70ch; line-height:1.55 }
-
-/* ---------------- footer ---------------- */
-
-footer{ background:var(--ground-2); border-top:1px solid var(--line); padding-block:34px }
-footer .wrap{ display:flex; flex-wrap:wrap; gap:14px 32px; justify-content:space-between; align-items:baseline }
-footer p{ font-family:var(--mono); font-size:12.5px; color:var(--muted) }
-
-@media (max-width:640px){
-  .attr{ grid-template-columns:1fr; gap:3px }
-  .step{ grid-template-columns:1fr; gap:6px }
-  .q{ grid-template-columns:1fr; gap:8px }
-}
-@media (prefers-reduced-motion:reduce){
-  *{ animation:none !important; transition:none !important }
-}
-</style>
+</script>
 </head>
 <body>
-<div class="board">
-  <div class="wrap">
-    <div class="meta">
-      <div><span class="eyebrow">Project</span><span class="val"><strong>Theo Logic, LLC — Website</strong></span></div>
-      <div><span class="eyebrow">Stage</span><span class="val">Concept review</span></div>
-      <div><span class="eyebrow">Prepared for</span><span class="val">Ted &amp; the Theo Logic team</span></div>
-      <div><span class="eyebrow">Prepared by</span><span class="val">Jose Hancock</span></div>
-      <div><span class="eyebrow">Issued</span><span class="val">21 Aug 2026</span></div>
-    </div>
 
-    <span class="eyebrow">Two directions, one decision</span>
-    <h1 style="margin-top:14px">Is Theo Logic a film company that happens to do good, or a mission that happens to use film?</h1>
+<a class="skip" href="#main">Skip to content</a>
 
-    <p class="lede">Both concepts below are complete, working websites — same content, same functional
-      requirements, two different answers to that one question. Palette, typography, imagery, even how
-      the secure idea exchange gets explained: <strong>everything else follows from the answer.</strong>
-      So the useful thing to decide here isn't which one you like. It's which one is the company you're
-      actually building.</p>
+<div class="progress" id="prog" aria-hidden="true"></div>
+
+<!-- ============================ NAV ============================ -->
+<nav id="nav" aria-label="Primary">
+  <a class="brand" href="#top">
+    <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="18.5" stroke="#E7B54F" stroke-width="1"/>
+      <path d="M8 14h24M20 14v20" stroke="#F5F2EB" stroke-width="1.4"/>
+      <path d="M20 26 33 14" stroke="#7ECAD8" stroke-width="1.2"/>
+    </svg>
+    <span class="brand-txt">THEO LOGIC<small>LLC</small></span>
+  </a>
+  <div class="navlinks">
+    <a href="#doctrine">Doctrine</a>
+    <a href="#divisions">Divisions</a>
+    <a href="#work">Work</a>
+    <a href="#vault">The Vault</a>
+    <a href="#store">Store</a>
+    <a href="#impact">Impact</a>
   </div>
+  <a href="#contact" class="btn btn-solid nav-cta">Start a Project</a>
+  <button class="burger" id="burger" type="button"
+          aria-label="Open menu" aria-expanded="false" aria-controls="mm"><i></i><i></i></button>
+</nav>
+
+<div class="mobile-menu" id="mm">
+  <a href="#doctrine">Doctrine</a>
+  <a href="#divisions">Divisions</a>
+  <a href="#work">Work</a>
+  <a href="#vault">The Vault</a>
+  <a href="#store">Store</a>
+  <a href="#impact">Impact</a>
+  <a href="#contact" class="gold">Start a Project</a>
 </div>
 
-<div class="wrap">
+<main id="main">
 
-  <section>
-    <div class="head">
-      <span class="eyebrow">Before you open them</span>
-      <h2>Three things to know</h2>
-    </div>
-    <div class="notes">
-      <div class="note">
-        <h3>The photography isn't real yet</h3>
-        <p>Every image in both concepts is placeholder artwork — light, sky, and architecture, composed
-          in each direction's palette. None of it claims anything about your portfolio. Real stills,
-          production photography, and headshots replace it during the build.</p>
-      </div>
-      <div class="note">
-        <h3>They are identical in substance</h3>
-        <p>Same mission, vision, motto, and tagline, word for word from you. Same four capabilities —
-          secure idea exchange, e-signature, the engagement layer, and commerce. Nothing is in one
-          concept and missing from the other.</p>
-      </div>
-      <div class="note">
-        <h3>The choice doesn't change the cost</h3>
-        <p>Scope, sequencing, and build effort are the same either way. Pick the one that's right for
-          the company, not the one that looks cheaper or more ambitious — neither is.</p>
+<!-- ============================ HERO ============================ -->
+<header class="hero" id="top">
+  <div class="shaft" aria-hidden="true"></div>
+  <div class="shaft two" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow reveal">Film · Music · Media Entertainment</p>
+      <h1 class="h-display reveal" data-d="1">
+        <span>Guided by <span class="gold ital">Truth.</span></span>
+        <span class="l2">Driven by <span class="cyan ital">Logic.</span></span>
+        <span class="l3">Delivering positive change<br>across generations.</span>
+      </h1>
+      <p class="lede reveal" data-d="2">
+        Theo Logic, LLC creates film, music, and media entertainment that informs,
+        inspires, and encourages positive societal change.
+      </p>
+      <div class="hero-meta reveal" data-d="3">
+        <a href="#work" class="btn btn-solid">View the Work <span class="ar">&rarr;</span></a>
+        <a href="#vault" class="btn">Secure IP Exchange <span class="ar">&rarr;</span></a>
       </div>
     </div>
-  </section>
-
-  <section>
-    <div class="head">
-      <span class="eyebrow">The concepts</span>
-      <h2>Open each one on a laptop, full screen, with the room quiet</h2>
-      <p>Give each about five minutes and scroll all the way down. They're best judged one after the
-        other rather than side by side in two small windows.</p>
-    </div>
-
-    <div class="specimens">
-
-      <article class="spec a">
-        <div class="band">
-          <span class="tag">Direction A</span>
-          <div class="swatches" aria-hidden="true">
-            <span class="sw" style="background:#07080A"></span>
-            <span class="sw" style="background:#12151A"></span>
-            <span class="sw" style="background:#E7B54F"></span>
-            <span class="sw" style="background:#7ECAD8"></span>
-            <span class="sw" style="background:#F5F2EB"></span>
-          </div>
-        </div>
-        <div class="spec-body">
-          <div class="spec-title">
-            <h2><span class="dir">Direction A</span>The Frame and the Light</h2>
-          </div>
-          <p class="thesis"><strong>A serious production company.</strong> Competence first, warmth
-            second. A darkened room with the images lit like windows in it.</p>
-
-          <dl class="attrs">
-            <div class="attr"><dt>Ground</dt><dd>Near-black, with film grain across the whole page</dd></div>
-            <div class="attr"><dt>Accents</dt><dd>Gold for Truth, cyan for Logic</dd></div>
-            <div class="attr"><dt>Type</dt><dd>High-contrast Didot-class serif — cinema titles, fashion mastheads</dd></div>
-            <div class="attr"><dt>Leads with</dt><dd>The motto, with <em>Truth</em> and <em>Logic</em> carrying their colors</dd></div>
-            <div class="attr"><dt>The Vault</dt><dd>Explained as a system — a live terminal readout of hashes and status codes</dd></div>
-            <div class="attr"><dt>It says</dt><dd>We know what we're doing, and we take the craft seriously</dd></div>
-            <div class="attr"><dt>Strongest with</dt><dd>A studio, a distributor, a brand's agency, a festival programmer — someone judging whether you can execute</dd></div>
-          </dl>
-
-          <p class="risk"><span class="lab">The risk</span>The KINDNESS Project, classroom-ready media,
-            and "positive change across generations" are warm ideas, and a black page holds them at arm's
-            length. Dark cinematic is also the house style of nearly every production company site, so it
-            differentiates less than it feels like it does.</p>
-
-          <a class="open" href="direction-a/" target="_blank" rel="noopener">
-            <span>Open “The Frame and the Light”</span><span class="arrow">→</span>
-          </a>
-        </div>
-      </article>
-
-      <article class="spec b">
-        <div class="band">
-          <span class="tag">Direction B</span>
-          <div class="swatches" aria-hidden="true">
-            <span class="sw" style="background:#F7F2E8"></span>
-            <span class="sw" style="background:#E7DCC7"></span>
-            <span class="sw" style="background:#B5533A"></span>
-            <span class="sw" style="background:#C08327"></span>
-            <span class="sw" style="background:#33513E"></span>
-          </div>
-        </div>
-        <div class="spec-body">
-          <div class="spec-title">
-            <h2><span class="dir">Direction B</span>Daylight</h2>
-          </div>
-          <p class="thesis"><strong>A mission-driven media organization.</strong> Purpose first, craft
-            as the proof. A printed report, not a title card.</p>
-
-          <dl class="attrs">
-            <div class="attr"><dt>Ground</dt><dd>Warm paper, no grain — warmth comes from color, not texture</dd></div>
-            <div class="attr"><dt>Accents</dt><dd>Clay, ochre, and forest green</dd></div>
-            <div class="attr"><dt>Type</dt><dd>Old-style humanist serif — book-like, warm, readable at length</dd></div>
-            <div class="attr"><dt>Leads with</dt><dd>The tagline — <em>Inform. Engage. Inspire You Too.</em> — with the mission as the opening line</dd></div>
-            <div class="attr"><dt>The Vault</dt><dd>Explained as a promise — a paper record card with a SEALED stamp</dd></div>
-            <div class="attr"><dt>It says</dt><dd>We're here for a reason, and we're good enough to be worth your attention</dd></div>
-            <div class="attr"><dt>Strongest with</dt><dd>A funder, a foundation, a school district, a sponsor, a partner, a family — someone deciding whether to trust you</dd></div>
-          </dl>
-
-          <p class="risk"><span class="lab">The risk</span>Warm and editorial can read as <em>soft</em>
-            to a commercial buyer. If a network executive is the person you most need to impress in the
-            next year, Direction A projects more authority.</p>
-
-          <a class="open" href="direction-b/" target="_blank" rel="noopener">
-            <span>Open “Daylight”</span><span class="arrow">→</span>
-          </a>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section>
-    <div class="head">
-      <span class="eyebrow">Line by line</span>
-      <h2>The same decisions, answered two ways</h2>
-    </div>
-    <div class="tablewrap">
-      <table>
-        <thead>
-          <tr><th scope="col">&nbsp;</th><th scope="col">A — The Frame and the Light</th><th scope="col">B — Daylight</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Thesis</th><td>A film company that happens to do good</td><td>A mission that happens to use film</td></tr>
-          <tr><th scope="row">Ground</th><td>Near-black <code>#07080A</code></td><td>Warm paper <code>#F7F2E8</code></td></tr>
-          <tr><th scope="row">Accents</th><td>Gold <code>#E7B54F</code> · Cyan <code>#7ECAD8</code></td><td>Clay <code>#B5533A</code> · Ochre <code>#C08327</code> · Forest <code>#33513E</code></td></tr>
-          <tr><th scope="row">Headline type</th><td>Didot-class high-contrast serif</td><td>Iowan / Palatino old-style serif</td></tr>
-          <tr><th scope="row">First words</th><td>The motto — Guided by Truth. Driven by Logic.</td><td>The tagline — Inform. Engage. Inspire You Too.</td></tr>
-          <tr><th scope="row">Imagery</th><td>Lit frames on a dark ground — a doorway onto light, a city at blue hour, a projector beam</td><td>Golden hour — open horizons, light breaking over a ridge, windows down a warm room</td></tr>
-          <tr><th scope="row">Texture</th><td>Film grain over everything, a slow light-shaft in the opening</td><td>None. Flat, clean, printed</td></tr>
-          <tr><th scope="row">Structure</th><td>Cinematic sequence — scenes that arrive</td><td>Numbered sections, like a printed annual report</td></tr>
-          <tr><th scope="row">The Vault</th><td>A terminal readout — hashes, status codes, a system at work</td><td>A record card with a SEALED stamp — a promise kept on paper</td></tr>
-          <tr><th scope="row">Engagement layer</th><td>An instrument panel with meters and recommendation chips</td><td>Three written insights with quiet meters, in plain language</td></tr>
-          <tr><th scope="row">Reads as</th><td>Expensive, exacting, cinematic</td><td>Trustworthy, purposeful, human</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section>
-    <div class="head">
-      <span class="eyebrow">Our position</span>
-      <h2>What we'd recommend, and why</h2>
-    </div>
-    <div class="rec">
-      <h2>Direction B — and it isn't close.</h2>
-      <p>Your own material makes the argument. The mission leads with <strong>"informs, inspires, and
-        encourages positive societal change."</strong> The vision is built on the KINDNESS Project. The
-        tagline is literally an invitation — <em>You Too</em>. That's a company whose differentiator is
-        <strong>why it makes things</strong>, and Direction B puts that on the first screen. Direction A
-        buries it below the fold.</p>
-      <p>There's a practical argument too. Direction A is the house style of every production company
-        website in the country. Direction B looks like almost nothing else in your category — and standing
-        apart is worth more than any single design decision on the page.</p>
-      <p><strong>Where Direction A wins:</strong> if the money in the next eighteen months is commercial
-        and branded work, the dark treatment reads as more expensive and closes that buyer faster.</p>
-
-      <div class="third">
-        <span class="eyebrow">A third option worth putting on the table</span>
-        <p>Run <strong>B as the company site</strong> and let individual film and project pages go dark
-          and cinematic. Warm front door, dark rooms. It's common in well-run media companies, it lets
-          each film carry its own mood, and it costs almost nothing extra — it's a palette switch per
-          page template, not a second design system.</p>
+    <div class="reveal" data-d="2">
+      <div class="slot reel">
+        <!-- Decorative play affordance: no video is wired up yet. -->
+        <div class="play" aria-hidden="true"></div>
+        <img src="assets/img/hero/doorway-light.jpg"
+             width="1400" height="1750"
+             fetchpriority="high" decoding="async"
+             alt="A doorway open onto light in a dark room">
       </div>
     </div>
-  </section>
+  </div>
+  <div class="scrollcue" aria-hidden="true"><span class="bar"></span> Scroll</div>
+</header>
 
-  <section>
-    <div class="head">
-      <span class="eyebrow">How to decide</span>
-      <h2>Four questions worth more than a preference</h2>
-      <p>"Which do you like better" gets you a vote and no reasoning. These get you an answer you can
-        defend six months from now.</p>
-    </div>
-    <div class="qs">
-      <div class="q"><span class="n">1</span><div class="qt">
-        <h3>Who has to say yes for this site to have done its job?</h3>
-        <p>A distributor and a network point to A. A funder, a sponsor, or a school district points to B.</p>
-      </div></div>
-      <div class="q"><span class="n">2</span><div class="qt">
-        <h3>Someone lands here for four seconds. What do they walk away knowing?</h3>
-        <p>That you're excellent, or that you're on a mission. Both are true. Only one can go first.</p>
-      </div></div>
-      <div class="q"><span class="n">3</span><div class="qt">
-        <h3>Where does the revenue come from over the next eighteen months?</h3>
-        <p>Commercial and branded work points to A. Grants, sponsorship, institutional licensing, and
-          direct sales point to B.</p>
-      </div></div>
-      <div class="q"><span class="n">4</span><div class="qt">
-        <h3>Look at the two opening screens with the sound off. Which one is the company you're building?</h3>
-        <p>Not the one you'd rather look at. The one that's accurate.</p>
-      </div></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="head">
-      <span class="eyebrow">Regardless of the choice</span>
-      <h2>What both concepts already handle</h2>
-    </div>
-    <ul class="shared">
-      <li>Mission, vision, motto, and tagline used verbatim — no paraphrasing, no reinterpretation</li>
-      <li>Secure idea and IP exchange, presented alongside the e-signature step</li>
-      <li>The AI engagement layer, labeled honestly as illustrative sample data rather than real numbers</li>
-      <li>Commerce for film and audio merchandise, with Stripe, Visa, Mastercard, and PayPal</li>
-      <li>Zelle handled as invoiced orders only — it has no checkout API and no chargeback protection, so it should never be a storefront button</li>
-      <li>Responsive on phone and tablet, keyboard navigable, and readable to screen readers</li>
-      <li>Self-contained single files with no external dependencies — nothing to break, nothing to license</li>
-    </ul>
-  </section>
-
-  <section>
-    <div class="head">
-      <span class="eyebrow">Working backward</span>
-      <h2>The path to November 2</h2>
-      <p>You have an investor meeting on November 2. A live site by then is a different kind of proof
-        than a deck — it's the company existing in public. Ten weeks is enough, but only about six of
-        them are build weeks. Here's what that sequence looks like.</p>
-    </div>
-    <div class="sched">
-      <div class="step">
-        <span class="when">Aug 21 – 28</span>
-        <div class="what"><h3>Your team reviews both directions</h3>
-          <p>Open each concept, sit with the four questions above, and come to the next conversation with
-            a leaning rather than a verdict.</p></div>
-      </div>
-      <div class="step">
-        <span class="when">Week of Sep 1</span>
-        <div class="what"><h3>Working session — direction chosen</h3>
-          <p>Ninety minutes. We work through the four questions together, settle the direction, and clear
-            the open scope items: the e-signature product, the merchandise question, and where the logo
-            and brand marks stand.</p></div>
-      </div>
-      <div class="step">
-        <span class="when">Sep 1 – 12</span>
-        <div class="what"><h3>Definition and content inventory</h3>
-          <p>Sitemap, page-by-page scope, and a written list of every piece of content we'll need from
-            you — bios, stills, the film's description, the KINDNESS Project story. This is the step that
-            protects the date.</p></div>
-      </div>
-      <div class="step">
-        <span class="when">Sep 15 – Oct 17</span>
-        <div class="what"><h3>Build</h3>
-          <p>The public site: mission, the KINDNESS Project, the film, the team, and contact. The Vault,
-            the engagement layer, and the store follow in a later phase — the Vault in particular is
-            gated on a submission release and NDA from entertainment counsel, which is a legal timeline
-            we don't control.</p></div>
-      </div>
-      <div class="step">
-        <span class="when">Oct 19 – 26</span>
-        <div class="what"><h3>Content load, review, revisions</h3>
-          <p>Real copy and real imagery in place, your review, and one round of changes.</p></div>
-      </div>
-      <div class="step">
-        <span class="when">Oct 28</span>
-        <div class="what"><h3>Live, with a week of buffer</h3>
-          <p>Deliberately not November 1.</p></div>
-      </div>
-      <div class="step final">
-        <span class="when">Nov 2</span>
-        <div class="what"><h3>Investor meeting</h3>
-          <p>Anyone in that room who looks up Theo Logic finds an operating company.</p></div>
-      </div>
-    </div>
-    <p class="caveat">The one thing that reliably moves a date like this is content. Bios, photographs,
-      and approved copy take longer to gather than anyone expects. If the direction is settled in the
-      first week of September and content starts arriving alongside the build, November 2 is comfortable
-      rather than tight.</p>
-  </section>
-
+<!-- ============================ MARQUEE ============================ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="track"></div>
 </div>
 
+<!-- ============================ DOCTRINE ============================ -->
+<section class="doctrine" id="doctrine" aria-labelledby="doctrine-h">
+  <div class="wrap doctrine-grid">
+    <div>
+      <p class="eyebrow reveal">Doctrine</p>
+      <h2 class="h-1 reveal" id="doctrine-h" data-d="1">The reason<br>we make things.</h2>
+      <div class="motto-card reveal u-mt-44" data-d="2">
+        <p class="eyebrow u-mb-18">Motto</p>
+        <blockquote>&ldquo;Guided by Truth. Driven by Logic. Delivering Positive Change Across Generations.&rdquo;</blockquote>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="creed reveal">
+        <h3 class="h-2">Mission</h3>
+        <p>
+          Theo Logic, LLC creates film, music, and media entertainment that informs, inspires,
+          and encourages positive societal change. Guided by truth, purpose, and disciplined
+          creative vision, the Company develops compelling stories and projects that promote
+          understanding, dialogue, and lasting impact.
+        </p>
+      </div>
+      <div class="creed reveal" data-d="1">
+        <h3 class="h-2">Vision</h3>
+        <p>
+          To build upon the foundation established by the <em>KINDNESS Project</em> and develop a
+          nationally recognized media entertainment company distinguished by integrity, creative
+          excellence, and transformational storytelling that promotes knowledge, understanding,
+          and positive change across generations.
+        </p>
+      </div>
+      <div class="creed reveal" data-d="2">
+        <h3 class="h-2">Tagline</h3>
+        <p>
+          Inform, Engage, and Inspire <em>You Too</em>.
+          <span class="gold mono-inline">&nbsp;#IEIU2</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ DIVISIONS ============================ -->
+<section class="divisions" id="divisions" aria-labelledby="divisions-h">
+  <div class="wrap">
+    <div class="div-head">
+      <div>
+        <p class="eyebrow reveal">Divisions</p>
+        <h2 class="h-1 reveal" id="divisions-h" data-d="1">Four disciplines,<br>one standard.</h2>
+      </div>
+      <p class="small reveal note-right" data-d="2">
+        Every division answers to the same test: is it true, is it useful, does it move someone forward.
+      </p>
+    </div>
+
+    <a class="div-row reveal" href="#contact">
+      <span class="div-num">01</span>
+      <div>
+        <div class="div-title">Film</div>
+        <div class="div-tags"><span>Narrative</span><span>Documentary</span><span>Short Form</span></div>
+      </div>
+      <p class="small div-desc u-m0">
+        Development through delivery — scripts, production, post, and festival strategy for work that
+        argues something worth arguing.
+      </p>
+      <span class="div-arrow" aria-hidden="true">&#8599;</span>
+    </a>
+
+    <a class="div-row reveal" href="#contact">
+      <span class="div-num">02</span>
+      <div>
+        <div class="div-title">Music</div>
+        <div class="div-tags"><span>Original Score</span><span>Artist Development</span><span>Licensing</span></div>
+      </div>
+      <p class="small div-desc u-m0">
+        Score, sound design, and recorded work — built to carry the story rather than decorate it.
+      </p>
+      <span class="div-arrow" aria-hidden="true">&#8599;</span>
+    </a>
+
+    <a class="div-row reveal" href="#contact">
+      <span class="div-num">03</span>
+      <div>
+        <div class="div-title">Media &amp; Digital</div>
+        <div class="div-tags"><span>Series</span><span>Podcast</span><span>Branded Content</span></div>
+      </div>
+      <p class="small div-desc u-m0">
+        Episodic and social-native formats that extend a project's reach past its opening weekend.
+      </p>
+      <span class="div-arrow" aria-hidden="true">&#8599;</span>
+    </a>
+
+    <a class="div-row reveal" href="#contact">
+      <span class="div-num">04</span>
+      <div>
+        <div class="div-title">Story Development</div>
+        <div class="div-tags"><span>IP Acquisition</span><span>Adaptation</span><span>Publishing</span></div>
+      </div>
+      <p class="small div-desc u-m0">
+        Bringing outside material in — books, life rights, and original pitches, handled under
+        documented chain of title.
+      </p>
+      <span class="div-arrow" aria-hidden="true">&#8599;</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============================ WORK ============================ -->
+<section class="work" id="work" aria-labelledby="work-h">
+  <div class="wrap">
+    <p class="eyebrow reveal">Selected Work</p>
+    <h2 class="h-1 reveal" id="work-h" data-d="1">Stories that earn<br>their runtime.</h2>
+
+    <!-- TODO before launch: "Project Title One–Five" and their years are
+         placeholders. Replace with real titles, stills, and credits. -->
+    <div class="work-grid">
+      <div class="feature reveal" data-d="1">
+        <div>
+          <span class="badge"><i aria-hidden="true"></i> Foundation Project</span>
+          <h3 class="h-2">The KINDNESS Project</h3>
+          <p class="small u-mt-16 u-mw-52">
+            The work the company was built on. A multi-format initiative using film, music, and
+            classroom-ready media to make kindness legible to a generation that has been taught
+            to treat it as weakness.
+          </p>
+          <a href="#contact" class="btn u-mt-26">Explore the Project <span class="ar">&rarr;</span></a>
+        </div>
+        <div class="slot">
+          <img src="assets/img/work/kindness-project-first-light.jpg"
+               width="1400" height="880" loading="lazy" decoding="async"
+               alt="First light breaking on a cold horizon">
+        </div>
+      </div>
+
+      <div class="card c8 reveal">
+        <div class="slot wide">
+          <img src="assets/img/work/city-skyline-dusk.jpg"
+               width="1400" height="790" loading="lazy" decoding="async"
+               alt="City skyline at dusk">
+        </div>
+        <div class="card-meta"><h4>Project Title One</h4><span class="yr">2026</span></div>
+        <div class="card-kind">Feature Documentary</div>
+      </div>
+
+      <div class="card c4 tall reveal" data-d="1">
+        <div class="slot">
+          <img src="assets/img/work/struck-strings-waveform.jpg"
+               width="1050" height="1400" loading="lazy" decoding="async"
+               alt="Struck strings of light over a waveform">
+        </div>
+        <div class="card-meta"><h4>Project Title Two</h4><span class="yr">2025</span></div>
+        <div class="card-kind">Original Score</div>
+      </div>
+
+      <div class="card c4 reveal">
+        <div class="slot">
+          <img src="assets/img/work/rain-on-glass.jpg"
+               width="1200" height="900" loading="lazy" decoding="async"
+               alt="Rain on glass with distant lights">
+        </div>
+        <div class="card-meta"><h4>Project Title Three</h4><span class="yr">2025</span></div>
+        <div class="card-kind">Short Film</div>
+      </div>
+
+      <div class="card c4 reveal" data-d="1">
+        <div class="slot">
+          <img src="assets/img/work/projector-beam.jpg"
+               width="1200" height="900" loading="lazy" decoding="async"
+               alt="A projector beam cutting through a dark room">
+        </div>
+        <div class="card-meta"><h4>Project Title Four</h4><span class="yr">2024</span></div>
+        <div class="card-kind">Limited Series</div>
+      </div>
+
+      <div class="card c4 reveal" data-d="2">
+        <div class="slot">
+          <img src="assets/img/work/camera-tripod-gold-cyan.jpg"
+               width="1200" height="900" loading="lazy" decoding="async"
+               alt="A camera on a tripod between gold and cyan light">
+        </div>
+        <div class="card-meta"><h4>Project Title Five</h4><span class="yr">2024</span></div>
+        <div class="card-kind">Branded Film</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ THE VAULT ============================ -->
+<section class="vault" id="vault" aria-labelledby="vault-h">
+  <div class="wrap">
+    <div class="vault-top">
+      <div>
+        <p class="eyebrow cool reveal">The Vault</p>
+        <h2 class="h-1 reveal" id="vault-h" data-d="1">Send us your idea.<br>Keep your rights.</h2>
+      </div>
+      <p class="lede reveal" data-d="2">
+        Most companies ask you to email a pitch into the void. The Vault is a controlled intake
+        channel: encrypted submission, a countersigned NDA before anyone reads a word, a timestamped
+        record of exactly what you sent and when, and a documented decision at the end.
+      </p>
+    </div>
+
+    <!-- Tab pattern: each button controls the panel below. Arrow/Home/End keys
+         move between steps — see assets/js/main.js → "Vault step panel". -->
+    <div class="flow" id="flow" role="tablist" aria-label="Vault submission process">
+      <button class="step on" type="button" role="tab" id="vault-tab-0"
+              aria-selected="true" aria-controls="vault-panel" data-i="0"><span class="n">01</span><span class="t">Submit</span></button>
+      <button class="step" type="button" role="tab" id="vault-tab-1" tabindex="-1"
+              aria-selected="false" aria-controls="vault-panel" data-i="1"><span class="n">02</span><span class="t">Sign NDA</span></button>
+      <button class="step" type="button" role="tab" id="vault-tab-2" tabindex="-1"
+              aria-selected="false" aria-controls="vault-panel" data-i="2"><span class="n">03</span><span class="t">Seal &amp; Timestamp</span></button>
+      <button class="step" type="button" role="tab" id="vault-tab-3" tabindex="-1"
+              aria-selected="false" aria-controls="vault-panel" data-i="3"><span class="n">04</span><span class="t">Review</span></button>
+      <button class="step" type="button" role="tab" id="vault-tab-4" tabindex="-1"
+              aria-selected="false" aria-controls="vault-panel" data-i="4"><span class="n">05</span><span class="t">Decision</span></button>
+    </div>
+
+    <div class="panel" id="vault-panel" role="tabpanel" aria-labelledby="vault-tab-0" tabindex="0">
+      <div class="panel-body">
+        <h3 class="h-3" id="pTitle">Encrypted submission</h3>
+        <p class="small" id="pBody">
+          Scripts, treatments, tracks, and decks upload over an encrypted channel into isolated
+          storage. Nothing lands in a shared inbox, and nothing is readable by staff until the
+          agreement in step two is executed on both sides.
+        </p>
+        <ul class="checks" id="pList">
+          <li>TLS in transit, encrypted at rest</li>
+          <li>Isolated per-submission storage</li>
+          <li>File type and size validation on upload</li>
+        </ul>
+      </div>
+      <!-- Illustrative console output, not a live system view. Hidden from AT
+           because it is decorative; the panel text carries the meaning. -->
+      <div class="term" id="term" aria-hidden="true"></div>
+    </div>
+
+    <p class="small reveal u-mt-26 u-mw-70">
+      <span class="cyan mono-label">E-SIGNATURE&nbsp;&nbsp;</span>
+      NDAs, submission releases, option agreements, and deal memos route through the company's
+      existing document-signing platform, so every executed agreement lands in the same system of
+      record your legal and finance teams already use.
+    </p>
+  </div>
+</section>
+
+<!-- ============================ INTELLIGENCE ============================ -->
+<section class="intel" id="intel" aria-labelledby="intel-h">
+  <div class="wrap intel-grid">
+    <div>
+      <p class="eyebrow reveal">Intelligence Layer</p>
+      <h2 class="h-1 reveal" id="intel-h" data-d="1">The site learns<br>what lands.</h2>
+      <p class="lede reveal u-mt-24" data-d="2">
+        Every trailer watched, every division page read, every abandoned inquiry form is a signal.
+        Theo Logic reads those signals in aggregate and adjusts what it puts in front of people —
+        and tells the team which offerings are actually being asked for.
+      </p>
+
+      <div class="feat-list">
+        <div class="feat reveal"><span class="idx" aria-hidden="true">A</span>
+          <div><h4>Engagement capture</h4>
+          <p class="small u-m0">Watch-through, scroll depth, and inquiry drop-off measured per project and per division.</p></div>
+        </div>
+        <div class="feat reveal" data-d="1"><span class="idx" aria-hidden="true">B</span>
+          <div><h4>Adaptive presentation</h4>
+          <p class="small u-m0">Featured work and calls to action reorder based on what a given audience segment responds to.</p></div>
+        </div>
+        <div class="feat reveal" data-d="2"><span class="idx" aria-hidden="true">C</span>
+          <div><h4>Offering recommendations</h4>
+          <p class="small u-m0">A weekly readout proposing service and pricing adjustments — surfaced to the team, never auto-applied.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample dashboard. Bar widths come from data-w and are illustrative only;
+         no analytics are collected by this page. -->
+    <div class="dash reveal" data-d="1" id="dash">
+      <div class="dash-hd"><span><span class="dot" aria-hidden="true"></span>Engagement Signal</span><span>Last 30 days</span></div>
+      <div class="dash-body">
+        <div class="bar-row">
+          <div><div class="lb" id="bar-1">Documentary reel — completion</div>
+            <div class="track" role="img" aria-labelledby="bar-1"><div class="fill" data-w="78"></div></div></div>
+          <div class="pct">78%</div>
+        </div>
+        <div class="bar-row">
+          <div><div class="lb" id="bar-2">Music &amp; score page — depth</div>
+            <div class="track" role="img" aria-labelledby="bar-2"><div class="fill" data-w="64"></div></div></div>
+          <div class="pct">64%</div>
+        </div>
+        <div class="bar-row">
+          <div><div class="lb" id="bar-3">Vault intake — start to submit</div>
+            <div class="track" role="img" aria-labelledby="bar-3"><div class="fill c" data-w="41"></div></div></div>
+          <div class="pct">41%</div>
+        </div>
+        <div class="bar-row">
+          <div><div class="lb" id="bar-4">Store — view to checkout</div>
+            <div class="track" role="img" aria-labelledby="bar-4"><div class="fill c" data-w="22"></div></div></div>
+          <div class="pct">22%</div>
+        </div>
+
+        <div class="rec">
+          <p class="eyebrow u-mb-14">Recommended actions</p>
+          <div class="rec-item"><span class="ic">PROMOTE</span><span>Documentary work outperforms branded content 3:1 with new visitors — move it above the fold.</span></div>
+          <div class="rec-item"><span class="ic">FIX</span><span>Vault intake loses most users at the NDA step. Test a plain-language summary before the signature.</span></div>
+          <div class="rec-item"><span class="ic">TEST</span><span>Score licensing inquiries are rising without a listed offering. Consider a published rate card.</span></div>
+        </div>
+        <p class="disclaimer">Illustrative sample data — not live metrics</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ STORE ============================ -->
+<section class="store" id="store" aria-labelledby="store-h">
+  <div class="wrap">
+    <div class="div-head">
+      <div>
+        <p class="eyebrow reveal">The Store</p>
+        <h2 class="h-1 reveal" id="store-h" data-d="1">Take the work<br>home with you.</h2>
+      </div>
+      <p class="small reveal note-right" data-d="2">
+        Screeners, scores, scripts, and limited merchandise — sold direct, shipped or streamed.
+      </p>
+    </div>
+
+    <!-- TODO before launch: products, prices, and imagery are placeholders and
+         there is no cart or checkout. Wire to a payment provider before selling. -->
+    <div class="prods">
+      <div class="prod reveal">
+        <div class="slot">
+          <img src="assets/img/store/feature-film-digital.jpg"
+               width="760" height="760" loading="lazy" decoding="async"
+               alt="Feature film — digital edition">
+        </div>
+        <div class="prod-info"><span class="kind">Digital Film</span><h4>Feature — Stream or Download</h4><span class="pr">$14.99</span></div>
+      </div>
+      <div class="prod reveal" data-d="1">
+        <div class="slot">
+          <img src="assets/img/store/score-vinyl.jpg"
+               width="760" height="760" loading="lazy" decoding="async"
+               alt="Original motion picture score on vinyl">
+        </div>
+        <div class="prod-info"><span class="kind">Audio</span><h4>Original Motion Picture Score</h4><span class="pr">$9.99</span></div>
+      </div>
+      <div class="prod reveal" data-d="2">
+        <div class="slot">
+          <img src="assets/img/store/ieiu2-tee.jpg"
+               width="760" height="760" loading="lazy" decoding="async"
+               alt="#IEIU2 heavyweight tee">
+        </div>
+        <div class="prod-info"><span class="kind">Apparel</span><h4>#IEIU2 Heavyweight Tee</h4><span class="pr">$34.00</span></div>
+      </div>
+      <div class="prod reveal" data-d="3">
+        <div class="slot">
+          <img src="assets/img/store/kindness-poster-set.jpg"
+               width="760" height="760" loading="lazy" decoding="async"
+               alt="KINDNESS Project poster set">
+        </div>
+        <div class="prod-info"><span class="kind">Print</span><h4>KINDNESS Project Poster Set</h4><span class="pr">$28.00</span></div>
+      </div>
+    </div>
+
+    <div class="pay">
+      <div>
+        <p class="eyebrow u-mb-14">Checkout</p>
+        <p class="small u-m0 u-mw-44">
+          Card, wallet, and bank-transfer options at checkout. All transactions encrypted and
+          PCI-compliant; the site never stores raw card data.
+        </p>
+      </div>
+      <div class="pay-chips">
+        <span class="chip">Stripe</span>
+        <span class="chip">Visa</span>
+        <span class="chip">Mastercard</span>
+        <span class="chip">PayPal</span>
+        <span class="chip note">Zelle — invoiced orders</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ IMPACT ============================ -->
+<section class="impact" id="impact" aria-labelledby="impact-h">
+  <div class="wrap">
+    <div class="impact-grid">
+      <div>
+        <p class="eyebrow reveal">Impact</p>
+        <h2 class="h-1 reveal" id="impact-h" data-d="1">Built on the<br>KINDNESS Project.</h2>
+        <p class="lede reveal u-mt-24" data-d="2">
+          Theo Logic did not start as a company. It started as a project about kindness — and the
+          discovery that people will sit still for a hard idea if you tell it honestly. Everything
+          the company has built since answers to that origin.
+        </p>
+        <a href="#contact" class="btn reveal u-mt-32" data-d="3">Partner With Us <span class="ar">&rarr;</span></a>
+      </div>
+      <div class="reveal" data-d="2">
+        <div class="slot">
+          <img src="assets/img/impact/layered-ridges-dawn.jpg"
+               width="1250" height="1000" loading="lazy" decoding="async"
+               alt="Layered ridges receding into a warm dawn">
+        </div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal">
+        <p class="k">Inform</p><h4>Tell it accurately.</h4>
+        <p class="small u-m0">Research-backed storytelling. Sources checked, claims held to the standard we would want applied to us.</p>
+      </div>
+      <div class="pillar reveal" data-d="1">
+        <p class="k">Engage</p><h4>Earn the attention.</h4>
+        <p class="small u-m0">Craft is the price of admission. A message nobody watches has changed nothing.</p>
+      </div>
+      <div class="pillar reveal" data-d="2">
+        <p class="k">Inspire</p><h4>Leave them able to act.</h4>
+        <p class="small u-m0">Every project ends with somewhere to go — a program, a partner, a next step.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow reveal">Start a Project</p>
+      <h2 class="h-1 reveal" id="contact-h" data-d="1">Tell us what<br>you're building.</h2>
+      <div class="contact-info reveal u-mt-48" data-d="2">
+        <div class="ci"><h4>General</h4><p class="gold"><a href="mailto:hello@theologic.com">hello@theologic.com</a></p></div>
+        <div class="ci"><h4>Submissions</h4><p><a href="mailto:vault@theologic.com">vault@theologic.com</a></p></div>
+        <div class="ci"><h4>Press &amp; Partnerships</h4><p><a href="mailto:press@theologic.com">press@theologic.com</a></p></div>
+        <p class="small u-m0">Placeholder contact details — replace with live addresses before launch.</p>
+      </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------
+         INQUIRY FORM — NOT CONNECTED TO A BACKEND
+         The markup is production-ready: named fields, associated labels, native
+         validation, autocomplete hints, honeypot, and a live status region.
+         There is no endpoint, so main.js intercepts submit and says so plainly
+         rather than faking success.
+         TO WIRE IT UP: add action="<endpoint>" method="post" to the form and
+         remove the data-demo attribute. main.js then stops intercepting and the
+         browser posts natively. A hosted service (Formspree, Basin, Netlify
+         Forms) needs no server of your own and works on GitHub Pages.
+         ------------------------------------------------------------------ -->
+    <form class="reveal" data-d="1" id="inquiry" data-demo>
+      <p class="form-notice">
+        <b>Demo</b>
+        <span>This form is not connected yet — nothing is sent and no one receives it.
+        Please use the email addresses at left to reach the company.</span>
+      </p>
+      <div class="f2">
+        <div>
+          <label for="contact-name">Name <span class="req" aria-hidden="true">*</span></label>
+          <input id="contact-name" name="name" type="text" placeholder="Your name"
+                 autocomplete="name" required>
+        </div>
+        <div>
+          <label for="contact-email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input id="contact-email" name="email" type="email" placeholder="you@company.com"
+                 autocomplete="email" inputmode="email" required>
+        </div>
+      </div>
+      <div class="f2">
+        <div>
+          <label for="contact-org">Organization</label>
+          <input id="contact-org" name="organization" type="text" placeholder="Optional"
+                 autocomplete="organization">
+        </div>
+        <div>
+          <label for="contact-interest">Interest</label>
+          <select id="contact-interest" name="interest">
+            <option>Film production</option>
+            <option>Music &amp; score</option>
+            <option>Media &amp; digital</option>
+            <option>Story / IP submission</option>
+            <option>Partnership or sponsorship</option>
+            <option>Press</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="contact-project">Project <span class="req" aria-hidden="true">*</span></label>
+        <textarea id="contact-project" name="project" required
+                  placeholder="What are you working on, and what would success look like?"></textarea>
+      </div>
+      <label class="consent">
+        <input type="checkbox" name="nda_ack" value="yes" required>
+        I understand that unsolicited material is not reviewed until a mutual non-disclosure
+        agreement has been executed through The Vault.
+      </label>
+      <!-- Honeypot: hidden from people, tempting to bots. Reject non-empty server-side. -->
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+      <button class="btn btn-solid u-js-start" type="submit">Send Inquiry <span class="ar">&rarr;</span></button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
 <footer>
   <div class="wrap">
-    <p>Theo Logic, LLC — Website concept review</p>
-    <p>Private link · Prepared by Jose Hancock · 21 August 2026</p>
+    <div class="foot-top">
+      <div class="foot-col">
+        <a class="brand u-mb-4" href="#top">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="18.5" stroke="#E7B54F" stroke-width="1"/>
+            <path d="M8 14h24M20 14v20" stroke="#F5F2EB" stroke-width="1.4"/>
+            <path d="M20 26 33 14" stroke="#7ECAD8" stroke-width="1.2"/>
+          </svg>
+          <span class="brand-txt">THEO LOGIC<small>LLC</small></span>
+        </a>
+        <p class="foot-motto">Guided by Truth. Driven by Logic.</p>
+      </div>
+      <div class="foot-col"><h5>Company</h5>
+        <a href="#doctrine">Doctrine</a><a href="#divisions">Divisions</a><a href="#impact">Impact</a><a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col"><h5>Platform</h5>
+        <a href="#vault">The Vault</a><a href="#intel">Intelligence</a><a href="#store">Store</a><a href="#work">Work</a>
+      </div>
+      <!-- These pages are scaffolded with the correct structure, but their body
+           copy is drafting guidance awaiting the client's attorney. See each
+           page's .doc-draft banner and README.md → "Known placeholders". -->
+      <div class="foot-col"><h5>Legal</h5>
+        <a href="pages/privacy.html">Privacy Policy</a><a href="pages/terms.html">Terms of Use</a><a href="pages/submission-policy.html">Submission Policy</a><a href="pages/accessibility.html">Accessibility</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>&copy; 2026 Theo Logic, LLC. All rights reserved.</span>
+      <span class="hashtag">Inform, Engage, and Inspire You Too &nbsp;#IEIU2</span>
+    </div>
   </div>
 </footer>
+
 </body>
 </html>

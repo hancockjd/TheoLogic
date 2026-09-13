@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Theo Logic, LLC — sitemap
+
+  INERT UNTIL LAUNCH. /robots.txt currently disallows all crawling and every
+  page carries <meta name="robots" content="noindex, nofollow">, so nothing here
+  is fetched yet. Before launch:
+
+    1. Replace https://www.theologic.com with the real domain (PLACEHOLDER).
+    2. Set each <lastmod> to the real last-modified date.
+    3. Remove the noindex meta from index.html and the four pages/ files.
+    4. Swap robots.txt to the allow rules in its header comment.
+
+  /archive/ and /404.html are intentionally absent — archived concepts should
+  not be indexed, and an error page never belongs in a sitemap.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.theologic.com/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theologic.com/pages/privacy.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theologic.com/pages/terms.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theologic.com/pages/submission-policy.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.theologic.com/pages/accessibility.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

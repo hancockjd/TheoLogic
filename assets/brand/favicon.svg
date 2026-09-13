@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <!-- Theo Logic mark. Strokes are heavier than the in-page logo so the shape
+       survives being drawn at 16px. Gold = Truth, cyan = Logic, frame = ink. -->
+  <rect width="40" height="40" rx="6" fill="#07080A"/>
+  <circle cx="20" cy="20" r="16" fill="none" stroke="#E7B54F" stroke-width="2"/>
+  <path d="M9.5 15h21M20 15v17" fill="none" stroke="#F5F2EB" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M20 25.5 30.5 15" fill="none" stroke="#7ECAD8" stroke-width="2.4" stroke-linecap="round"/>
+</svg>
