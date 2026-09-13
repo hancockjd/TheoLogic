@@ -1,80 +1,78 @@
 # Fonts
 
-**This folder is empty, and that is a problem worth fixing before launch.**
+The display serif is **self-hosted Playfair Display**, so every platform renders
+the same headings.
 
-## The issue
+| File | Face | Size |
+|---|---|---|
+| `playfair-display-400.woff2` | Regular, upright | 22 KB |
+| `playfair-display-400-italic.woff2` | Regular, italic | 22 KB |
+| `OFL-playfair-display.txt` | SIL Open Font License 1.1 | — |
 
-The site loads no web fonts at all. Every stack in `assets/css/styles.css`
-`:root` resolves against whatever is already installed on the visitor's machine:
+Source: `@fontsource/playfair-display` 5.3.0, Latin subset.
 
-```css
---serif: "Didot","Bodoni 72","Playfair Display",Georgia,"Times New Roman",serif;
---sans:  "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
---mono:  "SF Mono",ui-monospace,"JetBrains Mono","Roboto Mono",Menlo,Consolas,monospace;
-```
+## Why it's here
 
-`Didot` and `Bodoni 72` ship with macOS. They ship with nothing else.
-`Playfair Display` is a Google font that is not being loaded. So the fallback
-order in practice is:
+Before this, the site loaded no web fonts. The serif stack began with Didot and
+Bodoni 72, which only ship with macOS, so the high-contrast headings the design
+depends on appeared on Macs alone. Windows and Android visitors got Georgia or
+Times, which read as a different brand.
 
-| Visitor | Display serif they actually see |
-|---|---|
-| macOS / iOS | **Didot** — the intended design |
-| Windows | Georgia |
-| Android | Times / Noto Serif |
-| Linux | whatever `serif` maps to |
+Playfair now comes first in the stack, **on Macs too** — a deliberate choice so
+the client approves exactly what every visitor sees. Didot and Bodoni 72 remain
+in the stack only as fallbacks if the font files fail to load.
 
-The high-contrast Didot display face carries the identity of this design — the
-hero, every section heading, the motto. On Windows it silently becomes Georgia,
-a sturdy but completely different low-contrast face. The design the client
-approved is the macOS rendering, and most desktop visitors will not see it.
+## How it's wired
 
-The same applies to `--sans`: macOS gets SF, Windows gets Segoe UI. That one is
-a much smaller difference and is defensible as a deliberate system-font stack.
+- **`assets/css/styles.css`** — two `@font-face` rules at the top of the file,
+  and `--serif` in `:root` lists `"Playfair Display"` first. URLs are relative
+  to the stylesheet, so pages in `pages/` pick them up with no changes.
+- **`index.html`** — both files are preloaded in the `<head>`, because the hero
+  headline is the largest text on the page. `crossorigin` on those preload tags
+  is required even on the same origin, or the browser downloads each font twice.
+- **`404.html`** — declares the upright face inline with a root-absolute URL
+  (`/TheoLogic/assets/fonts/…`), because that page is self-contained. Change the
+  path when the custom domain goes live; if it's wrong the page falls back to a
+  system serif rather than breaking.
 
-## Fixing it
+`font-display:swap` shows fallback text immediately and swaps in Playfair when it
+arrives, so text is never invisible.
 
-Self-host a display serif and reference it here. Self-hosting is preferred over
-the Google Fonts CDN: no third-party request, no privacy disclosure, and no
-dependency on another origin staying up.
+## Only what's used
 
-1. Pick the face. **Playfair Display** is already named in the stack, is free
-   under the SIL Open Font License, and is the closest free Didot-class face.
-   If the client wants the real thing, licensing Didot for web use is a
-   commercial purchase and a budget conversation.
-2. Put the `.woff2` files in this folder. Subset to Latin and to the weights
-   actually used — headings use a single weight, so one or two files is enough.
-3. Declare them in `styles.css` above `:root`:
+The site uses the serif at weight 400 only, upright and italic. Headings,
+the wordmark, the motto, the marquee, division titles, contact details, and the
+footer motto all use those two faces. No bold serif appears anywhere.
 
-   ```css
-   @font-face{
-     font-family:"Playfair Display";
-     src:url("../fonts/playfair-display-400.woff2") format("woff2");
-     font-weight:400; font-style:normal; font-display:swap;
-   }
-   ```
-   Add a second `@font-face` with `font-style:italic` — the hero sets "Truth."
-   and "Logic." in italic, and a synthesized italic looks wrong on a display
-   serif.
-4. Move it ahead of the Mac-only names in `--serif`, so every platform gets the
-   same face:
+The `unicode-range` covers Latin plus common punctuation (em dash, curly quotes,
+©, ·). Arrow characters (→ ↗) fall outside it, which is fine: every arrow on the
+site is set in the sans or mono face, not the serif.
 
-   ```css
-   --serif: "Playfair Display",Didot,"Bodoni 72",Georgia,serif;
-   ```
-5. Preload it in `index.html`, since the hero headline is the largest text on
-   the page and you do not want it reflowing:
+## Adding a weight
 
-   ```html
-   <link rel="preload" href="assets/fonts/playfair-display-400.woff2"
-         as="font" type="font/woff2" crossorigin>
-   ```
+Only add one if the design actually calls for it — every file is another
+download on first visit.
 
-`font-display:swap` shows fallback text immediately and swaps when the font
-lands — the text is never invisible, at the cost of a visible reflow. Check the
-result on Windows, not just on a Mac.
+1. Get the `.woff2` from `@fontsource/playfair-display` (under `files/`), Latin
+   subset, the weight and style you need.
+2. Save it here as `playfair-display-<weight>[-italic].woff2`.
+3. Add a matching `@font-face` block beside the existing two in `styles.css`,
+   copying the `unicode-range`.
+4. Preload it in `index.html` only if it appears above the fold.
 
-## Check before shipping
+## The sans and mono faces
 
-Confirm the license permits web embedding, and keep the license file alongside
-the font files. The OFL requires the license to travel with the font.
+These are intentionally **not** self-hosted. `--sans` resolves to the platform's
+system UI face (SF on Apple, Segoe UI on Windows) and `--mono` to the platform
+monospace (SF Mono, Consolas). The differences between those are small and
+normal for system-font stacks, unlike the serif, where the fallback changed the
+character of the design. If the client wants pixel-identical eyebrows and
+buttons everywhere, self-host a mono (JetBrains Mono is already named in the
+stack) the same way.
+
+## License
+
+Playfair Display is licensed under the SIL Open Font License 1.1, which permits
+web embedding and self-hosting. The license file must stay in this folder with
+the fonts. The name "Playfair Display" is a Reserved Font Name: if the files are
+ever modified (re-subset, converted), the modified font must be renamed.

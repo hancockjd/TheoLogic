@@ -41,7 +41,10 @@ assets/                        everything the browser loads
     favicon.svg                the mark, thickened to survive 16px
     README.md                  raster icons still needed, and the color tokens
   fonts/
-    README.md                  EMPTY — and the reason why matters. Read it.
+    playfair-display-400.woff2         display serif, upright
+    playfair-display-400-italic.woff2  display serif, italic
+    OFL-playfair-display.txt   license; must ship with the fonts
+    README.md                  how to add a weight or swap the face
   img/
     hero/                      1 image
     work/                      5 images
@@ -139,24 +142,24 @@ WCAG AA before launch.
 
 ## Known issues
 
-### The design only renders as approved on macOS
+### Headings changed from Didot to Playfair Display — show the client
 
-The site loads **no web fonts**. `--serif` begins `"Didot","Bodoni 72"` — both
-macOS-only — and `Playfair Display`, the one cross-platform face in the stack, is
-never actually loaded. So the high-contrast display serif that carries the whole
-identity appears on Macs and iPhones, and everyone else falls through to Georgia
-or Times.
+The client approved the design on a Mac, where headings rendered in Didot. That
+font only exists on macOS, so Windows and Android visitors were seeing Georgia.
+The site now self-hosts Playfair Display and uses it on **every** platform,
+Macs included, so the whole audience sees one design.
 
-The client approved this design on a Mac. A Windows visitor sees materially
-different typography on the hero and every heading. Fix it by self-hosting a
-display serif before launch — `assets/fonts/README.md` has the full argument,
-the `@font-face` and preload snippets, and the licensing caveat.
+Playfair is the same high-contrast style as Didot but not identical: slightly
+heavier strokes, taller lowercase letters, and a more flowing italic. The client
+should see the updated hero before launch, because it is not pixel-for-pixel
+what they signed off on. Details in `assets/fonts/README.md`.
 
 ### The hero CTAs fall below the fold on common laptops
 
 **The hero's two call-to-action buttons fall below the fold on ~800px-tall
 viewports**, which includes the very common 1440×900 laptop. Measured at that
-size, `.hero-meta` sits at y≈814 against an 813px viewport. Because the buttons
+size with Playfair Display, `.hero-meta` spans y≈788–839 against an 813px
+viewport — the bottom half of the buttons is below the fold. Because the buttons
 are `.reveal` elements, they start at `opacity:0` and only animate in when
 scrolled to — so on first paint a visitor sees the headline and the lede, and
 "View the Work" / "Secure IP Exchange" are not on screen at all.
@@ -166,7 +169,8 @@ original file, which behaves identically). It is a layout question rather than a
 bug in the reveal logic: `.hero` combines `min-height:100svh` with
 `padding:150px 0 70px` and a headline that scales to 82px across four lines.
 
-Fixing it means reclaiming roughly 55px — trimming the hero's top padding,
+Fixing it means lifting the buttons about 46px, enough to sit clear of the
+reveal trigger (which ignores the bottom 8% of the viewport) — trimming the hero's top padding,
 tightening the `h1` clamp, or reducing the `.l3` sub-line — all of which change
 the approved composition, so it was left for a design decision rather than
 changed unilaterally.
@@ -183,7 +187,6 @@ still has to supply. They are also flagged with `TODO` comments in the HTML.
 | Imagery | `assets/img/` | All 12 are generated placeholder artwork. None represents the client's portfolio. |
 | Email addresses | Contact + footer | `hello@` / `vault@` / `press@theologic.com` are unconfirmed. |
 | Legal pages | `pages/` | Structure and headings are in place and linked from the footer; body copy is drafting guidance, not legal language. Needs the client's attorney. |
-| Web fonts | `assets/fonts/` | Empty. See Known issues — the design only renders as approved on macOS. |
 | Social card | `assets/img/social/` | Empty. `og:image` borrows a content photo at the wrong ratio. |
 | Raster icons | `assets/brand/` | `favicon.ico` and `apple-touch-icon.png` still needed. |
 | Store | Store section | Prices and products are placeholders; no cart, no checkout, no payment provider. |
@@ -208,9 +211,10 @@ should not be published until the systems behind them are real.
    `noindex`.
 3. **Verify `sitemap.xml`** — real domain, real `lastmod` dates, and every page
    that should be indexed listed.
-4. **Self-host a display serif** so the design renders as approved off macOS.
-   See Known issues and `assets/fonts/README.md`. This is the highest-impact
-   visual item on the list.
+4. **Check the typography on Windows and Android.** Playfair Display is now
+   self-hosted, so every platform should render the same display serif, but it
+   has only been verified in Chrome on macOS. Look at the hero, the motto, and a
+   `pages/` heading on real devices.
 5. **Connect the form** (see the table above) and confirm delivery end to end.
 6. **Replace placeholder content** — titles, imagery, email addresses, prices.
 7. **Get the four `pages/` documents drafted by counsel**, then delete the
@@ -227,8 +231,9 @@ should not be published until the systems behind them are real.
 11. **Decide on custom-domain files.** A `CNAME` file is required for a custom
     domain on GitHub Pages and is not present. The "Back to Theo Logic" link in
     `404.html` currently points to `/TheoLogic/` to suit the project URL
-    (`hancockjd.github.io/TheoLogic/`); when the custom domain goes live at the
-    root, change it back to `/`.
+    (`hancockjd.github.io/TheoLogic/`), and so does the `@font-face` URL in that
+    file's inline `<style>`. When the custom domain goes live at the root,
+    change both back to start at `/`.
 12. **Review the claims** in the Vault and Store sections against what actually
     exists.
 
