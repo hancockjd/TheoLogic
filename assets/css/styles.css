@@ -197,7 +197,9 @@ nav{
 nav.stuck{background:rgba(7,8,10,.82); backdrop-filter:blur(16px) saturate(1.2);
   border-bottom-color:var(--line); padding-top:14px; padding-bottom:14px}
 .brand{display:flex; align-items:center; gap:12px}
-.mark{width:26px; height:26px; flex:none}
+/* Raster emblem (assets/brand/logo-mark-192.png, transparent, gold on nothing).
+   Shown larger than the old 26px line mark because its bevel and flare need room. */
+.mark{width:36px; height:36px; flex:none}
 .brand-txt{font-family:var(--serif); font-size:19px; letter-spacing:.06em}
 .brand-txt small{font-family:var(--mono); font-size:9px; letter-spacing:.22em; color:var(--muted-2);
   display:block; margin-top:2px}
@@ -526,6 +528,9 @@ footer{padding:clamp(56px,6vw,84px) 0 40px; border-top:1px solid var(--line)}
   color:var(--muted-2); font-weight:400; margin:0 0 16px}
 .foot-col a{display:block; font-size:14px; color:var(--muted); padding:5px 0; transition:.3s}
 .foot-col a:hover{color:var(--truth)}
+/* The brand link lives in a .foot-col, whose links are display:block. Keep the
+   emblem and wordmark side by side, as in the nav. */
+.foot-col .brand{display:flex}
 .foot-motto{font-family:var(--serif); font-style:italic; font-size:clamp(18px,2vw,26px);
   line-height:1.35; color:#D5DAE0; max-width:22ch; margin:18px 0 0}
 .foot-bot{display:flex; flex-wrap:wrap; gap:18px; justify-content:space-between; align-items:center;

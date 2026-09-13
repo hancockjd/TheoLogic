@@ -45,8 +45,11 @@ assets/                        everything the browser loads
   js/
     main.js                    all behavior — one file, no dependencies
   brand/
-    favicon.svg                the mark, thickened to survive 16px
-    README.md                  raster icons still needed, and the color tokens
+    logo-mark-192.png          the emblem as used on the site (transparent)
+    logo-mark-512.png          larger emblem for press and social (transparent)
+    logo-full.png              full lockup with wordmark and tagline (transparent)
+    favicon-16.png, favicon-32.png, apple-touch-icon.png
+    README.md                  how the files were made, and their limits
   fonts/
     playfair-display-400.woff2         display serif, upright
     playfair-display-400-italic.woff2  display serif, italic
@@ -90,9 +93,11 @@ archive/                       not linked from the live site
   would 404 in turn and leave an unstyled error page. Inlining makes it render
   from any depth. Keep its palette in sync with `:root` by hand; it is the only
   intentional duplication in the project.
-- **The logo is inline SVG**, not a file, so it inherits color and costs no
-  request. It appears in the nav and footer of `index.html` and in each page
-  under `pages/`. Editing the mark means editing those copies.
+- **The logo emblem is one image file**, `assets/brand/logo-mark-192.png`,
+  referenced from the nav and footer of `index.html`, each page under `pages/`,
+  and `404.html`. Replacing that file updates the logo everywhere. Its
+  transparent background was derived from black, so it is for dark backgrounds
+  only — see `assets/brand/README.md`.
 - **Files starting with `_` are templates**, not pages. `.nojekyll` is what
   keeps a host from skipping them, though nothing links to them either way.
 
@@ -195,7 +200,6 @@ still has to supply. They are also flagged with `TODO` comments in the HTML.
 | Email addresses | Contact + footer | `hello@` / `vault@` / `press@theologic.com` are unconfirmed. |
 | Legal pages | `pages/` | Structure and headings are in place and linked from the footer; body copy is drafting guidance, not legal language. Needs the client's attorney. |
 | Social card | `assets/img/social/` | Empty. `og:image` borrows a content photo at the wrong ratio. |
-| Raster icons | `assets/brand/` | `favicon.ico` and `apple-touch-icon.png` still needed. |
 | Store | Store section | Prices and products are placeholders; no cart, no checkout, no payment provider. |
 | The Vault | Vault section | Describes encryption, NDAs, and audit logging that no system behind this page performs. |
 | Intelligence dashboard | Intel section | Sample data, labelled as such on the page. No analytics are collected. |
@@ -227,9 +231,10 @@ should not be published until the systems behind them are real.
 7. **Get the four `pages/` documents drafted by counsel**, then delete the
    `.doc-draft` banner and every `.todo` marker from each. The Submission Policy
    is the one with real exposure behind it.
-8. **Add raster icons** — `favicon.ico` (32×32) and `apple-touch-icon.png`
-   (180×180) in `assets/brand/`, then reference them in every `<head>`. Needs
-   raster tooling that was not installed here.
+8. **Get the logo as a vector master** (SVG, AI, EPS, or PDF) from the
+   designer, plus a version for light backgrounds. The site's logo files were
+   made from a 1254px PNG on black — fine for the web, not for print. See
+   `assets/brand/README.md`.
 9. **Build a purpose-made social card** at 1200×630 in `assets/img/social/`;
    spec is in that folder's README.
 10. **Check contrast** against WCAG AA (see Accessibility above), then update
@@ -238,9 +243,9 @@ should not be published until the systems behind them are real.
 11. **Decide on custom-domain files.** A `CNAME` file is required for a custom
     domain on GitHub Pages and is not present. The "Back to Theo Logic" link in
     `404.html` currently points to `/TheoLogic/` to suit the project URL
-    (`hancockjd.github.io/TheoLogic/`), and so does the `@font-face` URL in that
-    file's inline `<style>`. When the custom domain goes live at the root,
-    change both back to start at `/`.
+    (`hancockjd.github.io/TheoLogic/`), and so do the font, logo, and favicon
+    URLs in that file. When the custom domain goes live at the root, change
+    every `/TheoLogic/` path in `404.html` back to start at `/`.
 12. **Review the claims** in the Vault and Store sections against what actually
     exists.
 
