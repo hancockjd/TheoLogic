@@ -225,9 +225,10 @@ should not be published until the systems behind them are real.
     `pages/accessibility.html` — it currently states the audit has not happened,
     which must stay true until it has.
 11. **Decide on custom-domain files.** A `CNAME` file is required for a custom
-    domain on GitHub Pages and is not present. If you stay on a project URL
-    (`user.github.io/TheoLogic/`) instead, change the "Back to Theo Logic" link
-    in `404.html` from `/` to `/TheoLogic/`.
+    domain on GitHub Pages and is not present. The "Back to Theo Logic" link in
+    `404.html` currently points to `/TheoLogic/` to suit the project URL
+    (`hancockjd.github.io/TheoLogic/`); when the custom domain goes live at the
+    root, change it back to `/`.
 12. **Review the claims** in the Vault and Store sections against what actually
     exists.
 
