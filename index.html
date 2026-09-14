@@ -52,13 +52,15 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <script src="assets/js/main.js" defer></script>
 
-<!-- Without JS, .reveal elements would stay at opacity:0 (blank page) and the
-     marquee track would render empty. Restore a readable static page instead. -->
+<!-- Without JS, .reveal elements would stay at opacity:0 (blank page), the
+     marquee track would render empty, and the nav would never turn solid, leaving
+     its light text over the light content sections. Restore a readable static page. -->
 <noscript>
   <style>
     .reveal{opacity:1 !important; transform:none !important}
     .marquee{display:none}
     .progress{display:none}
+    nav{background:rgba(7,8,10,.96); border-bottom-color:rgba(245,242,235,.10)}
   </style>
 </noscript>
 
