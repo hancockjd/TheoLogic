@@ -122,8 +122,25 @@ section, each under a comment banner matching the HTML → responsive breakpoint
 
 Two things worth knowing before editing:
 
-- **Design tokens live in `:root`.** Colors, fonts, page padding, max width, and
-  the shared easing curve are variables. Change the brand there, not inline.
+- **Design tokens live in `:root`.** Fonts, page padding, max width, the easing
+  curve, and the brand colors (`--ink`, `--paper`, `--truth`, `--logic`) are
+  variables. Change the brand there, not inline.
+- **Colors come in two themes.** Components never name a text or background
+  color directly; they use role tokens (`--bg`, `--bg-band`, `--surface`,
+  `--text`, `--text-soft`, `--text-muted`, `--text-faint`, `--accent-text`,
+  `--cool-text`, `--line`, …) defined in the THEMES block near the top of the
+  stylesheet. The dark values are the default and cover the frame: nav, hero,
+  marquee, footer, the legal-page header, and the Vault console
+  (`.theme-dark`). Content opts into warm paper with `.theme-light` — every
+  home-page section from Doctrine to Contact, and each `pages/` body. A new
+  section needs only that class.
+- **Gold and cyan are darkened when used as text on light.** Brand gold
+  `#E7B54F` reads at only 1.8:1 on paper, so light sections set text in
+  `--accent-text` (`#7F5C16`) and `--cool-text` (`#2A6773`). The bright brand
+  colors stay for fills, rules, and glows, which is why buttons and dividers
+  look the same in both themes.
+- **The logo stays on the dark frame.** Its transparency was cut from a black
+  background, so it only looks right on dark — see `assets/brand/README.md`.
 - **The `u-*` classes are a spacing shim.** They replace what used to be 31
   inline `style=""` attributes, one declaration each. They exist so the HTML
   carries no styling; prefer a semantic class for anything new.
@@ -147,10 +164,13 @@ menu that leaves the tab order when closed and closes on Escape, labelled form
 fields with validation and a live status region, alt text on all 12 images, and
 `prefers-reduced-motion` honored in both CSS and JS.
 
-Not yet done — needs a real audit: contrast has not been measured with a
-checker. The muted greys (`--muted-2` `#6C737D`) on near-black are used at small
-sizes for eyebrows and metadata and are the likeliest failures. Verify against
-WCAG AA before launch.
+Contrast was measured in the rendered page on 2026-09-13: 69 text elements
+across the light content and the dark frame, each against the background
+actually behind it. All 69 meet WCAG AA; the tightest are small form labels at
+4.77:1. The light content uses colors chosen to pass, and in the dark frame the
+small labels were brightened from `#6C737D` (4.2:1, failing) to `#7B828C`
+(5.2:1). That is a measurement, not an audit — hover and focus states, text
+over images, and real assistive-technology use are still untested.
 
 ## Known issues
 

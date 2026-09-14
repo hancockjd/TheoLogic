@@ -40,7 +40,10 @@ this repo**; keep it with the client's brand files.
   was derived from black, the darker shading in the bevels became
   semi-transparent gold. On the site's near-black ground that is invisible and
   correct. On white or a light photo it looks washed out. A light-background
-  version needs a real transparent master from the designer.
+  version needs a real transparent master from the designer. This is why every
+  logo on the site sits on the dark frame — nav, footer, legal-page header, and
+  404 — even though the content sections are now light. Don't place these files
+  inside a `.theme-light` section.
 - **There is no vector.** The largest full lockup is 1199px wide, which is
   enough for the web and social but not for print, signage, or merchandise.
   Request the logo as SVG, AI, EPS, or PDF.
@@ -49,8 +52,11 @@ this repo**; keep it with the client's brand files.
 
 ## Colors
 
-The logo is gold only. The site palette in `assets/css/styles.css` `:root` still
-uses cyan for "Logic" accents elsewhere in the UI — change tokens there, not here.
+The logo is gold only. The site palette in `assets/css/styles.css` still uses
+cyan for "Logic" accents elsewhere in the UI — change tokens there, not here.
+The brand constants below are identical in both themes; on light content,
+text uses darker role tokens (`--accent-text` `#7F5C16`, `--cool-text`
+`#2A6773`) so it stays readable. See the THEMES block in the stylesheet.
 
 | Token | Hex | Meaning |
 |---|---|---|
